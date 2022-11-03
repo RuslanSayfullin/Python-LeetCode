@@ -10,7 +10,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'django_api_with_react',
-        'USER': 'cryptolis',
+        'USER': 'portaluser',
         'PASSWORD': dbase_psw,
         'HOST': 'localhost',
         'PORT': '5432',

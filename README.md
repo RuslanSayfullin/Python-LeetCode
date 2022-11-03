@@ -48,16 +48,45 @@ $ sudo su - postgres
 $ psql 
 
 =# CREATE DATABASE chiffre;
-=# CREATE USER youruser WITH PASSWORD 'myPassword';
-=# GRANT ALL PRIVILEGES ON DATABASE chiffre TO youruser;
+=# CREATE USER cryptolis WITH PASSWORD 'esgqm@%ngc';
+=# GRANT ALL PRIVILEGES ON DATABASE chiffre TO portaluser;
 =# \q
 $ exit
 
 ========================================================================================================================
 Добавить в директорию django_api_with_react/backend/backend файл psw.py
-В данный файл, необходимо добавить две переменные:
+В данный файл, необходимо добавить три переменные:
 
 secret_key = 'ваш секретный ключ'   # секретный ключ приложения
 dbase_psw = 'ваш ключ к БД'         # Пароль для подключения к БД
+allowed_hosts = ['localhost', '127.0.0.1']                  # Список строк, представляющих имена хостов/доменов
+
+========================================================================================================================
+
+Перейти в директорию chiffre/backend
+
+Для запуска выполнить следующие команды:
+Команда для создания миграций приложения для базы данных
+$ python3 manage.py makemigrations
+$ python3 manage.py migrate
+
+Создание суперпользователя
+$ python3 manage.py createsuperuser
+
+Будут выведены следующие выходные данные. Введите требуемое имя пользователя, электронную почту и пароль:
+по умолчанию почта admin@admin.com пароль: 12345
+
+Username (leave blank to use 'admin'): admin
+Email address: admin@admin.com
+Password: ********
+Password (again): ********
+Superuser created successfully.
+
+Команды для запуска приложения:
+$ python3 manage.py runserver
+
+
+
+Django-приложение будет доступно по адресу: http://127.0.0.1:8000/
 
 ========================================================================================================================

@@ -1,6 +1,6 @@
 from pathlib import Path
-from .psw import secret_key
-from .settings_db_debug import DEBUG, DATABASES  # импорт настроект "режима отладки" и "базы данных"
+from .psw import secret_key, allowed_hosts
+from .settings_db_debug import DEBUG, DATABASES  # импорт настроек "режима отладки" и "базы данных"
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = secret_key
 
-ALLOWED_HOSTS = ['80.78.244.196', 'localhost', '127.0.0.1', 'chiffre.tech']
+ALLOWED_HOSTS = allowed_hosts
 INTERNAL_IPS = ('127.0.0.1',)   # кортеж с перечнем IP-адресов, с которых может вестись разработка.
 
 
@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'rest_framework',
+    'appmain.apps.AppmainConfig'
 ]
 
 MIDDLEWARE = [
@@ -57,17 +58,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 
 # Password validation

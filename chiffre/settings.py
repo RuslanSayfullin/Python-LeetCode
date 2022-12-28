@@ -12,8 +12,8 @@ SECRET_KEY = secret_key
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-INTERNAL_IPS = ('127.0.0.1',)   # кортеж с перечнем IP-адресов, с которых может вестись разработка.
+ALLOWED_HOSTS = ['127.0.0.1', '80.78.244.196', 'chiffre.tech', 'localhost']
+INTERNAL_IPS = ('127.0.0.1', '80.78.244.196', 'chiffre.tech', 'localhost')   # кортеж с перечнем IP-адресов, с которых может вестись разработка.
 
 
 # Application definition

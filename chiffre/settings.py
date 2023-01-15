@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django.contrib.humanize',
 ] + [
-    'appmain.apps.AppmainConfig'
+    'appmain.apps.AppmainConfig',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [

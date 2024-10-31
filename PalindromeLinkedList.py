@@ -5,7 +5,7 @@ Input: head = [1,2,2,1]
 Output: true
 """
 
-from typing import List
+from listnode import ListNode
 
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
